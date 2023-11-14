@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -72,6 +74,12 @@ class CartPage extends StatelessWidget {
                                   borderRadius: BorderRadius.all(
                                     Radius.circular(12),
                                   )),
+                            ),
+                            BackdropFilter(
+                              filter: ImageFilter.blur(sigmaX: 1.3, sigmaY: .9),
+                              child: Container(
+                                color: Colors.transparent,
+                              ),
                             ),
                             ListTile(
                               tileColor: null,
@@ -195,7 +203,6 @@ class CartPage extends StatelessWidget {
                   // Show Snackbar
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(
-                      
                       duration: const Duration(milliseconds: 210),
                       elevation: 0,
                       backgroundColor: Colors.transparent,
@@ -224,7 +231,7 @@ class CartPage extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-         elevation: 10,
+        elevation: 10,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
         content: Text("Sorry...We are working on it",
             style: GoogleFonts.poppins(
