@@ -24,11 +24,15 @@ class MyDrawer extends StatelessWidget {
             SizedBox(
               height: MediaQuery.of(context).size.height * 0.03,
             ),
+
+            //?go to shop
             MyListTile(
               text: "Shop",
               icon: Icons.home,
               onTap: () => Navigator.pop(context),
             ),
+
+            //?go to cart
             MyListTile(
               text: "Cart",
               icon: Icons.shopping_cart_rounded,
@@ -39,6 +43,8 @@ class MyDrawer extends StatelessWidget {
             ),
           ],
         ),
+
+        //?exit
         Padding(
           padding: EdgeInsets.only(
               bottom: MediaQuery.of(context).size.height * 0.03),

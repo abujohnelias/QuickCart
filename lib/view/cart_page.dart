@@ -95,7 +95,7 @@ class CartPage extends StatelessWidget {
                                 ),
                               ),
                               subtitle: Text(
-                                item.price.toStringAsFixed(2),
+                                "₹ ${item.price.toStringAsFixed(2)}",
                                 style: GoogleFonts.poppins(
                                   fontWeight: FontWeight.bold,
                                   fontSize:
@@ -148,8 +148,7 @@ class CartPage extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                          "Total: \$${totalAmount.toStringAsFixed(2)}", // Display total cart amount
+                      Text("Total: ₹ ${totalAmount.toStringAsFixed(2)}",
                           style: GoogleFonts.poppins(
                             fontWeight: FontWeight.w300,
                             fontSize: MediaQuery.of(context).size.width * 0.04,

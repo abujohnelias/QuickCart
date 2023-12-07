@@ -23,7 +23,7 @@ class Shop extends ChangeNotifier {
         categoryid: ''),
     Product(
         name: "New Balance 327",
-        price: 99,
+        price: 9599.00,
         description:
             "The New Balance 327 is a retro-inspired sneaker, blending modern design with heritage details. Featuring a lightweight, comfortable build, it boasts a stylish silhouette suitable for both casual and athletic wear.",
         imagePath:
@@ -47,7 +47,16 @@ class Shop extends ChangeNotifier {
         imagePath:
             "https://images.unsplash.com/photo-1605034313761-73ea4a0cfbf3?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         productid: '',
-        categoryid: '')
+        categoryid: ''),
+    Product(
+        productid: "",
+        categoryid: "",
+        name: "Fila Disruptor",
+        price: 8999.00,
+        description:
+            "Fila Disruptor: Iconic '90s chunky sneaker featuring a bold silhouette with a distinctive serrated sole. Known for its retro appeal, comfort, and fashion-forward statement in contemporary streetwear culture.",
+        imagePath:
+            "https://images.unsplash.com/photo-1579446565308-427218a2c60e?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D")
   ];
 
   final List<Product> _cart = [];
