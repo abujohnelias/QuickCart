@@ -118,60 +118,23 @@ class MyProductTile extends StatelessWidget {
   }
 
   addToCart(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        elevation: 10,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+    //add to cart
+    context.read<Shop>().addToCart(product);
+
+    // Show Snackbar
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        duration: const Duration(milliseconds: 210),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
         content: Text(
-          "Add this item to your cart?",
+          'Item added...',
           style: GoogleFonts.poppins(
             fontWeight: FontWeight.w300,
-            fontSize: MediaQuery.of(context).size.width * 0.035,
-            color: Theme.of(context).colorScheme.inversePrimary,
+            fontSize: MediaQuery.of(context).size.width * 0.04,
+            color: Theme.of(context).colorScheme.onBackground,
           ),
         ),
-        actions: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              MaterialButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                child: Icon(Icons.clear_rounded, color: Colors.red[200]),
-              ),
-              //confirm
-              MaterialButton(
-                onPressed: () {
-                  Navigator.pop(context);
-
-                  //add to cart
-                  context.read<Shop>().addToCart(product);
-
-                  // Show Snackbar
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      duration: const Duration(milliseconds: 210),
-                      elevation: 0,
-                      backgroundColor: Colors.transparent,
-                      content: Text(
-                        'Item added...',
-                        style: GoogleFonts.poppins(
-                          fontWeight: FontWeight.w300,
-                          fontSize: MediaQuery.of(context).size.width * 0.04,
-                          color: Theme.of(context).colorScheme.onBackground,
-                        ),
-                      ),
-                    ),
-                  );
-                },
-                child: Icon(Icons.check_rounded, color: Colors.green[200]),
-              )
-            ],
-          )
-          //cancel
-        ],
       ),
     );
   }
